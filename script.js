@@ -51,7 +51,7 @@ async function generateResponse(aiChatBox) {
         image.classList.remove("choose")
         user.file={}
         imagebtn.style.filter="drop-shadow(0 0 6px  rgba(35, 52, 5, 0.953))";
-        submitbtnbtn.style.filter="drop-shadow(0 0 6px  rgba(35, 52, 5, 0.953))";
+        submitbtn.style.filter="drop-shadow(0 0 6px  rgba(35, 52, 5, 0.953))";
     }
 }
 
@@ -67,12 +67,12 @@ let handelchatResponse = (msg) =>{
     chatContainer.appendChild(createChatBox(html, 'user-chat-box'));   
     chatContainer.scrollTo({top:chatContainer.scrollHeight,behavior:"smooth"});
     setTimeout(()=>{
-        let html1 =`<img width="13%" src="ai.png" id="aiImage" alt="">
+        let html =`<img width="13%" src="ai.png" id="aiImage" alt="">
             <div class="ai-chat-area">
                 <img src="loading.webp" alt="" width="10%" id="loading" style="margin-top: 5px;">
 
             </div>`;
-            let aiChatBox= createChatBox(html1, 'ai-chat-box');
+            let aiChatBox= createChatBox(html, 'ai-chat-box');
             chatContainer.appendChild(aiChatBox);
             generateResponse(aiChatBox);
     },589); 
@@ -84,8 +84,10 @@ prompt.addEventListener('keydown', (e) =>{
         prompt.value = '';
     }
 }); // This is an event listener that listens for a keydown event on the prompt element. When the event is triggered, the function inside the event listener will run.
+
 submitbtn.addEventListener("click",()=>{
-    handlechatResponse(prompt.value)
+    handelchatResponse(prompt.value);
+    submitbtn.style.filter="drop-shadow(0 0 6px  rgba(112, 2, 15, 0.95))";
 })
 imageinput.addEventListener("change",()=>{
     const file=imageinput.files[0]
@@ -103,6 +105,6 @@ imageinput.addEventListener("change",()=>{
     imagebtn.style.filter="drop-shadow(0 0 10px  rgba(232, 42, 3, 0.871))";
     reader.readAsDataURL(file);
 });
-imagebtn.addEventListener("click",()=>{
-    imagebtn.querySelector("input").click();
-});
+document.querySelector("#image").addEventListener("click",()=>{
+    document.querySelector("#image").querySelector("input").click();
+})
