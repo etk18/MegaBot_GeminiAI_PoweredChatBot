@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini AI Powered Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <h1 >MegaBot</h1>
+    <div class="credits">
+        
+        <p class="a">Gemini AI Powered ChatBot</p>
+        <p  class="a">Created By: EESH SAGAR SINGH</p>
+        
+        <p class="a" >GitHub: <a class="a" href="https://github.com/etk18">Click Here</a></p>
+         
+    </div>
+  <div class="box">
+
+    <div class="chat-container">
+
+        <div class="ai-chat-box">
+            <img width="13%" src="ai.png" id="aiImage" alt="">
+            <div class="ai-chat-area">
+                <div class="ai-chat-start">
+                    <p  >Hi! I am MegaBot. How can I help you today?</p>
+                </div>
+
+                <img src="loading.webp" alt="" width="50" id="loading" style="display: none;">
+                
+
+            </div>
+            
+        </div>
+
+        <div class="user-chat-box" style="display: none;">
+            <img  src="user.png" id="userImage" alt="">
+
+            <div class="user-chat-area" >
+                
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="prompt-area">
+        <input type="text" id="prompt" placeholder="Type Your message...">
+        <button id="image" ><img src="img.svg" alt=""><input type="file" accept="image/*" hidden></button>
+        <button id="sumbit" ><img src="send1.svg" alt=""></button>
+        
+    </div>
+
+  </div>
+
+    <script src="script.js" ></script>
+
+</body>
+</html>
