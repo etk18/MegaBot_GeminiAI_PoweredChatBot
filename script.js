@@ -13,7 +13,7 @@ function createChatBox(html, classes) {
     return div;
 }
 
-const apikey= "${{secrets.API_KEY}}";
+const apikey= secrets.API_KEY;
 console.log(apikey);
 const Api_Url='https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDfNI7jxxARpwxd4Camu2IQiMFVwydBJxg';
 let user={
